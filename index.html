@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>Using Table</title>
+    </head>
+    <body>
+        <noscript>ENABLE JAVASCRIPT</noscript>
+        <table id='Table'>
+            <tbody>
+                <tr>
+                    <td colspan='2' style='background-color: #FF0; padding: 5px;'>Earliest Computing Devices</td>
+                </tr>
+                <tr>
+                    <td><button>Abacus</button></td>
+                    <td><button>Napier's Bones</button></td>
+                </tr>
+                <tr>
+                    <td><button>Oughtred's Slide Rule</button></td>
+                    <td><button>Pascal's Calculator</button></td>
+                </tr>
+                <tr>
+                    <td><button>Leibniz's Machine</button></td>
+                    <td><button>Difference Engine</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <style>
+            button {
+                cursor: pointer;
+                width: 100%;
+            }
+            #Table {
+                font: 50px 'Times New Roman';
+                border: 1px solid black;
+                background-color: #CFF;
+                border-spacing: 5px;
+                position: absolute;
+                right: 50%;
+                bottom: 50%;
+                transform: translate(50%, 50%);
+            }
+            #Table * * {
+                border: 1px solid black;
+                padding: 0px;
+                font: inherit;
+            }
+            #Table * * button {
+                padding: 5px;
+                border-width: 0px;
+                background-color: transparent;
+                text-align: left;
+            }
+        </style>
+        <script>
+            main()
+            function main() {
+                document.querySelectorAll('button').forEach(elem => elem.onclick = () => window.open(`https://www.google.com/search?q=${elem.textContent}`, '_blank'))
+                return requestAnimationFrame(main)
+            }
+        </script>
+    </body>
+</html>
